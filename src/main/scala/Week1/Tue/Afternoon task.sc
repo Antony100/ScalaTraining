@@ -47,5 +47,3 @@ lowerString.capitalize // String
 //this won't work, using reserved word/keyword
 // val new: String  = "new"
 
-
-
