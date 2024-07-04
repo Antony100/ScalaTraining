@@ -15,7 +15,7 @@ if (watermelons <= 3) {
   println(s"Doesn't need a bag for $watermelons watermelon(s)")
 } else if (watermelons <= 5 && hasBag) {
   println(s"has a bag, is able to take $watermelons watermelons")
-}else if (watermelons <= 5 && !hasBag) {
+} else if (watermelons <= 5 && !hasBag) {
   println(s"No bag, unable to take $watermelons watermelons")
 } else {
   println(s"can't carry $watermelons watermelons")
@@ -42,7 +42,7 @@ if ((watermelons <= 5 && hasBag) || (watermelons <= 3)) {
 ((true || false) && false)
 (false && false)
 (false && true)
-(1 < 48 & 7 != 10 |19 + 10 == 21)
+(1 < 48 & 7 != 10 | 19 + 10 == 21)
 
 // Research
 
@@ -69,9 +69,12 @@ println(outcome)
 val num1: Int = 40
 val num2: Int = 20
 
-val numOutcome: String  =
+val numOutcome: String =
   if (num1 > num2) {
     "yes"
   } else {
     "no"
   }
+
+val altOutcome: String = if (num1 > num2) "yes" else "no"
+
