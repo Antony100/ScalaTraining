@@ -27,10 +27,10 @@ val davidsPets: Map[String, String] = Map(
 
 davidsPets("Rover")
 
-val davidsDogs: Map[String, String] = davidsPets.filter(
+val davidsDogs: List[String] = davidsPets.filter(
   pet => pet._2 == "dog"
-)
-davidsDogs.keys.toList
+).keys.toList
+// davidsDogs.keys.toList
 
 // EXTENSION
 //val newSeq: Seq[Int] = ()

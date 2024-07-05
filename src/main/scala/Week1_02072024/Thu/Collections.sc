@@ -80,6 +80,9 @@ val itemExistsInSeq: Boolean = seq1.exists{
 val itemExistsInMap: Boolean = map1.exists{
   number => number._2 > 2
 }
+val itemExistsInMap2: Boolean = map1.exists{
+  number => number._1 > "one"
+}
 
 // Contains
 // check for 1 param
