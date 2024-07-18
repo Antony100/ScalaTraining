@@ -39,4 +39,45 @@ object AfternoonTask extends App {
     val attainableMortgage = (calculateMortgageAttainable(annualSalary, requiredMortgageMultiplier))
     if (housePrice > attainableMortgage) Left("house is unaffordable") else Right(true)
   }
+
+  case class MortgageApplication(annualSalary: Int,deposit: Int, housePrice: Int, creditScore: Int)
+
+  case class ValidatedMortgageApplication(annualSalary: Int, deposit: Int, housePrice: Int, creditScore: Int)
+
+  def assessMortgageApplication(
+                                 application: MortgageApplication,
+                                 requiredMortgageMultiplier: Int,
+                                 qualifyingCreditScore: Int,
+                                 percentageRequired: Int
+                               ): Either[String, ValidatedMortgageApplication] = {
+    for {
+      hasDeposit <- hasDepositAmount(application.deposit, application.housePrice, percentageRequired)
+      checkCreditScore <- checkCreditScore(application.creditScore, qualifyingCreditScore)
+      canAffordMortgage <- canAffordMortgage(application.housePrice, application.annualSalary, requiredMortgageMultiplier)
+    } yield ValidatedMortgageApplication(
+      application.annualSalary,
+      application.deposit,
+      application.housePrice,
+      application.creditScore
+    )
+  }
+
+  val SamanthaApplication = MortgageApplication(
+    annualSalary = 45000,
+    deposit = 20000,
+    housePrice = 280000,
+    creditScore = 577
+  )
+
+  val result = assessMortgageApplication(
+    SamanthaApplication,
+    requiredMortgageMultiplier = 4,
+    qualifyingCreditScore = 600,
+    percentageRequired = 10
+  )
+
+  println(result)
+
 }
+
+
