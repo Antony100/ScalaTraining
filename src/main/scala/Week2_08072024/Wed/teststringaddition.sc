@@ -1,5 +1,5 @@
-val result: String = ""
-result.concat("Fizz")
+val testDouble: Double = 5000
 
-result
+val result:String = f"£$testDouble%,.0f"
 
+val appendComma:String = result.format(",")
