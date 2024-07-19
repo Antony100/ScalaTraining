@@ -1,8 +1,9 @@
 package Week2_08072024.Wed
 
-import org.scalatest.FlatSpec
 
-class fizzBuzzSpec extends FlatSpec {
+import org.scalatest.flatspec.AnyFlatSpec
+
+class fizzBuzzSpec extends AnyFlatSpec {
 
   "fizzBuzz" should "return Fizz when number is divisible by 3" in {
     val num = new fizzBuzz(3)
