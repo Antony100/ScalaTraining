@@ -1,5 +1,6 @@
 package Week2_08072024.Wed
 
+
 import org.scalatest.flatspec.AnyFlatSpec
 
 class fizzBuzzSpec extends AnyFlatSpec {
